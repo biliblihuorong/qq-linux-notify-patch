@@ -1,8 +1,10 @@
-# QQ Linux 通知补丁 (v6.6)
+# QQ Linux 通知补丁 (v0.0.2)
 
 修复 QQ Linux 3.2.34 收到新消息不弹系统通知的问题。通过 Electron 启动入口和 preload 观察会话列表，使用系统桌面通知；不修改账号或聊天数据库，不需要机器人或消息转发服务。
 
 适用于 x64 Linux、`/opt/QQ` 安装的 QQ 3.2.34，以及 KDE/GNOME 等标准通知环境。此次运行时修复已在 Arch Linux + KDE Plasma Wayland、QQ `3.2.34-53644` 上验证：后台收到通知，点击后能打开正确会话。其他构建及桌面环境仍需实机验证。
+
+正式发布版本以 GitHub Release 和 `VERSION` 为准；早期源码中的 v6.6 是内部补丁编号。
 
 ## 安装
 

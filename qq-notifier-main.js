@@ -1,4 +1,4 @@
-// QQ Linux 通知补丁 - 主进程侧 v6.6
+// QQ Linux 通知补丁 - 主进程侧 v0.0.2
 // 职责:接收渲染层信号 → 集中节流 → 发系统通知 → 点击通知聚焦 QQ 并打开对应会话
 // 兼容两种部署:开发目录(qq-re)与 /opt/QQ 安装(preload 按 __dirname 解析)
 const fs = require('fs');
