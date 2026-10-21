@@ -1,0 +1,28 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          bash -n install.sh
+          node --check qq-notifier-main.js
+          node --check qq-notifier-preload.js
+          node --check qq_main_hook.js
+      - name: Notification regressions
+        run: node tests/notifier.cjs
+      - name: Installer and restore guards
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
